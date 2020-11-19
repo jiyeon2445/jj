@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="helloRepository" class="org.myji.yeon.HelloRepository" />
+	<bean id="helloService" class="org.myji.yeon.HelloService">
+		<constructor-arg ref="helloRepository" />
+	</bean>
+
+	<bean id="helloController" class="org.myji.yeon.HelloController">
+		<constructor-arg ref="helloService" />
+	</bean>
+
+</beans>
